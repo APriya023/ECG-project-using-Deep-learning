@@ -1,0 +1,89 @@
+Epoch 1/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 94s 192ms/step - accuracy: 0.5460 - loss: 1.2691 - val_accuracy: 0.7462 - val_loss: 0.7841
+Epoch 2/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 79s 163ms/step - accuracy: 0.8799 - loss: 0.3939 - val_accuracy: 0.8417 - val_loss: 0.5459
+Epoch 3/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 62s 130ms/step - accuracy: 0.9272 - loss: 0.2533 - val_accuracy: 0.8531 - val_loss: 0.5178
+Epoch 4/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 54s 113ms/step - accuracy: 0.9369 - loss: 0.2151 - val_accuracy: 0.8359 - val_loss: 0.6004
+Epoch 5/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 105s 218ms/step - accuracy: 0.9419 - loss: 0.2003 - val_accuracy: 0.8611 - val_loss: 0.4835
+Epoch 6/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 99s 206ms/step - accuracy: 0.9491 - loss: 0.1789 - val_accuracy: 0.8836 - val_loss: 0.4226
+Epoch 7/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 74s 153ms/step - accuracy: 0.9533 - loss: 0.1538 - val_accuracy: 0.8673 - val_loss: 0.5017
+Epoch 8/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 75s 156ms/step - accuracy: 0.9553 - loss: 0.1537 - val_accuracy: 0.8617 - val_loss: 0.4600
+Epoch 9/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 86s 179ms/step - accuracy: 0.9590 - loss: 0.1325 - val_accuracy: 0.8565 - val_loss: 0.5541
+Epoch 10/10
+480/480 ━━━━━━━━━━━━━━━━━━━━ 154s 204ms/step - accuracy: 0.9632 - loss: 0.1246 - val_accuracy: 0.8531 - val_loss: 0.5508
+
+
+Significance of Key Parameters in Model Performance
+When evaluating the effectiveness of a deep learning model, we focus on four critical metrics that define both training and generalization performance. Your model’s values provide a comprehensive snapshot of how well it learns from data and how it handles unseen examples.
+
+1. Training Accuracy – 96.32%
+Significance
+Training accuracy reflects how well the model has memorized patterns from the training dataset. A high training accuracy suggests that the model has learned the fundamental representations required for making predictions effectively. However, if training accuracy is too high compared to validation accuracy, it may indicate overfitting, meaning the model may not generalize well to new, unseen data.
+
+Analysis Based on Your Model
+Your training accuracy of 96.32% suggests that the model is performing exceptionally well in recognizing patterns within the training dataset.
+
+Since this accuracy continues to increase through each epoch, it shows that the model successfully learns and adapts over time.
+
+However, this high accuracy must be compared with validation accuracy to assess generalization capacity.
+
+Impact on Model Performance
+✔ A high training accuracy means the model learns complex relationships in data. ❌ If validation accuracy is significantly lower, it could indicate overfitting, leading to unreliable predictions on new data.
+
+2. Validation Accuracy – 85.31%
+Significance
+Validation accuracy measures how well the model generalizes to unseen data. If validation accuracy is close to training accuracy, the model has learned effectively without overfitting. However, a large gap between training and validation accuracy suggests that the model is becoming too specialized on the training data, failing to generalize to new examples.
+
+Analysis Based on Your Model
+Your model’s validation accuracy is 85.31%, which is lower than training accuracy (96.32%).
+
+The gap between training and validation accuracy (around 11%) indicates some level of overfitting—the model is performing slightly worse when exposed to unseen data.
+
+Ideally, validation accuracy should be closer to training accuracy, suggesting that the model can generalize effectively.
+
+Impact on Model Performance
+✔ A high validation accuracy means the model performs well on unseen data. ❌ A significant gap between training and validation accuracy suggests overfitting—where the model memorizes training data but fails to generalize.
+
+3. Training Loss – 0.1246
+Significance
+Training loss represents how much error exists in the predictions made by the model during training. Lower training loss means the model is learning well, effectively minimizing errors. However, an extremely low loss can sometimes indicate overfitting, especially if validation loss does not show the same reduction.
+
+Analysis Based on Your Model
+Your training loss is 0.1246, which is very low, meaning your model effectively minimizes error during training.
+
+The decreasing trend in training loss over epochs shows that the model is successfully improving its learning process.
+
+However, this value must be compared with validation loss to ensure that generalization is also improving.
+
+Impact on Model Performance
+✔ A low training loss means the model is optimizing well and reducing prediction errors. ❌ If validation loss remains high, the model may be overfitting, memorizing patterns instead of generalizing.
+
+4. Validation Loss – 0.5508
+Significance
+Validation loss is crucial for assessing how well the model performs on unseen data. Unlike training loss, which keeps decreasing due to model optimization, validation loss often fluctuates—a rising trend indicates overfitting, while a consistent decrease suggests strong generalization.
+
+Analysis Based on Your Model
+Your validation loss is 0.5508, significantly higher than training loss (0.1246).
+
+The gap between training and validation loss suggests that the model learns well on training data but struggles with unseen data.
+
+This is a clear sign of overfitting—meaning the model memorizes patterns in training but cannot adapt effectively to new examples.
+
+Impact on Model Performance
+✔ If validation loss decreases alongside training loss, the model generalizes well. ❌ A high validation loss compared to training loss suggests overfitting, reducing reliability on unseen data.
+
+Final Evaluation and Recommendations
+Your model exhibits strong training accuracy and low training loss, meaning it learns efficiently. However, there is an 11% accuracy gap between training and validation accuracy, along with a high validation loss, suggesting overfitting. To improve generalization, consider the following strategies:
+
+Solutions to Improve Generalization:
+✔ Use Regularization: Techniques like L2 weight decay or Dropout (e.g., 0.3-0.5) can help reduce overfitting. ✔ Increase Dataset Size: More diverse training samples improve generalization. ✔ Apply Data Augmentation: Introduce variations in data to prevent the model from memorizing patterns. ✔ Early Stopping: Stop training when validation loss stops improving to prevent excessive optimization on training data. ✔ Tuning Learning Rate: A lower learning rate (e.g., 0.0005) can stabilize updates and avoid sharp overfitting.
+
+Conclusion
+Your model has strong learning capability but faces overfitting challenges, leading to reduced reliability on new data. By fine-tuning training techniques and optimizing hyperparameters, you can improve generalization while maintaining high performance.
